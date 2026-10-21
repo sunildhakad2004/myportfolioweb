@@ -140,6 +140,7 @@ a {
   object-fit: cover;
   border-radius: 50%;
   background: var(--surface);
+  animation: photo-float 4s ease-in-out 600ms infinite;
 }
 
 .profile-block h1 {
@@ -234,6 +235,7 @@ a {
 .section-title {
   margin-bottom: 42px;
   text-align: center;
+  animation: rise-in 500ms ease-out both;
 }
 
 .section-title p {
@@ -258,6 +260,11 @@ a {
 .about-card {
   padding: 24px 0;
   border-top: 1px solid var(--line);
+  animation: rise-in 550ms ease-out both;
+}
+
+.about-card:nth-child(2) {
+  animation-delay: 100ms;
 }
 
 .about-card h3,
@@ -376,6 +383,19 @@ a {
   gap: 22px;
   padding: 28px 0;
   border-top: 1px solid var(--line);
+  animation: rise-in 550ms ease-out both;
+}
+
+.project-card:nth-child(2) {
+  animation-delay: 100ms;
+}
+
+.project-card:nth-child(3) {
+  animation-delay: 200ms;
+}
+
+.project-card:nth-child(4) {
+  animation-delay: 300ms;
 }
 
 .project-number {
@@ -412,6 +432,15 @@ a {
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;
   gap: 42px;
+}
+
+.contact-info,
+.contact-form {
+  animation: rise-in 550ms ease-out both;
+}
+
+.contact-form {
+  animation-delay: 120ms;
 }
 
 .contact-item {
@@ -561,6 +590,11 @@ body.dark-mode {
   to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes photo-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
 @media (max-width: 640px) {
   .site-header {
     width: calc(100% - 32px);
@@ -630,7 +664,7 @@ body.dark-mode {
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     scroll-behavior: auto !important;
-    animation-duration: 0.01ms !important;
+    animation: none !important;
     transition-duration: 0.01ms !important;
   }
 }
