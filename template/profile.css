@@ -470,13 +470,33 @@ a {
   resize: vertical;
 }
 
-.send-options {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+.contact-consent {
+  display: flex;
+  align-items: flex-start;
   gap: 10px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
 }
 
-.send-options button {
+.contact-consent input {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
+  margin: 2px 0 0;
+  accent-color: var(--accent);
+}
+
+.contact-trap {
+  position: absolute;
+  width: 1px !important;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.contact-submit {
   min-height: 48px;
   border: 0;
   background: var(--ink);
@@ -486,8 +506,29 @@ a {
   font-weight: 600;
 }
 
-.send-options button:hover {
+.contact-submit:hover:not(:disabled) {
   background: var(--accent);
+}
+
+.contact-submit:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.contact-status {
+  min-height: 24px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.contact-status[data-state="success"] {
+  color: var(--accent);
+}
+
+.contact-status[data-state="error"] {
+  color: #b43e3e;
 }
 
 footer {
@@ -575,9 +616,6 @@ body.dark-mode {
     gap: 10px;
   }
 
-  .send-options {
-    grid-template-columns: 1fr;
-  }
 
   .project-card {
     grid-template-columns: 38px minmax(0, 1fr);

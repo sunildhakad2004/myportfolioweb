@@ -35,38 +35,39 @@ siteMenu.addEventListener("click", function (event) {
 const contactForm = document.getElementById("contactForm");
 
 if (contactForm) {
-  contactForm.addEventListener("submit", function (event) {
+  const contactStatus = document.getElementById("contactStatus");
+  const contactSubmit = contactForm.querySelector("button[type='submit']");
+
+  contactForm.addEventListener("submit", async function (event) {
     event.preventDefault();
 
     const formData = new FormData(contactForm);
-    const name = formData.get("name").toString().trim();
-    const email = formData.get("email").toString().trim();
-    const subject = formData.get("subject").toString().trim();
-    const message = formData.get("message").toString().trim();
-    const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
-    const submitter = event.submitter;
+    const payload = Object.fromEntries(formData.entries());
 
-    if (!(submitter instanceof HTMLButtonElement)) {
-      return;
-    }
+    contactSubmit.disabled = true;
+    contactStatus.dataset.state = "pending";
+    contactStatus.textContent = "Sending your message...";
 
-    if (submitter.value === "email") {
-      const gmailUrl = new URL("https://mail.google.com/mail/");
-      gmailUrl.search = new URLSearchParams({
-        view: "cm",
-        fs: "1",
-        to: "sunildhakadsd27@gmail.com",
-        su: subject,
-        body
-      }).toString();
-      window.open(gmailUrl, "_blank", "noopener,noreferrer");
-      return;
-    }
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+      const result = await response.json();
 
-    if (submitter.value === "whatsapp") {
-      const whatsappUrl = new URL("https://wa.me/918718850393");
-      whatsappUrl.searchParams.set("text", `Subject: ${subject}\n\n${body}`);
-      window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+      if (!response.ok) {
+        throw new Error(result.message || "Your message could not be sent. Please try again.");
+      }
+
+      contactStatus.dataset.state = result.delivered.email && result.delivered.whatsapp ? "success" : "partial";
+      contactStatus.textContent = result.message;
+      contactForm.reset();
+    } catch (error) {
+      contactStatus.dataset.state = "error";
+      contactStatus.textContent = error.message || "Your message could not be sent. Please try again.";
+    } finally {
+      contactSubmit.disabled = false;
     }
   });
 }

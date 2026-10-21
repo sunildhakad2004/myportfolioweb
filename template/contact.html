@@ -25,7 +25,7 @@
           <h3>Let's Work Together</h3>
           <p>Have a project idea or looking for a developer? Feel free to contact me.</p>
           <div class="contact-item"><span>📧</span><div><small>Email</small><p><a href="mailto:sunildhakadsd27@gmail.com">sunildhakadsd27@gmail.com</a></p></div></div>
-          <div class="contact-item"><span>📱</span><div><small>Mobile</small><p><a href="tel:+918718850393">+91 8718850393</a></p></div></div>
+          <div class="contact-item"><span>📱</span><div><small>Message delivery</small><p>Private email and WhatsApp notifications</p></div></div>
           <div class="contact-item"><span>📍</span><div><small>Location</small><p>Bhopal, Madhya Pradesh, India</p></div></div>
         </div>
         <form class="contact-form" id="contactForm">
@@ -33,10 +33,10 @@
           <input type="email" name="email" placeholder="Your Email" required />
           <input type="text" name="subject" placeholder="Subject" required />
           <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
-          <div class="send-options">
-            <button type="submit" name="delivery" value="email">Send via Gmail</button>
-            <button type="submit" name="delivery" value="whatsapp">Send via WhatsApp</button>
-          </div>
+          <label class="contact-consent"><input type="checkbox" name="consent" required /> I agree to send my message to Sunil by email and WhatsApp.</label>
+          <input class="contact-trap" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <button class="contact-submit" type="submit">Send Message</button>
+          <p class="contact-status" id="contactStatus" role="status" aria-live="polite"></p>
         </form>
       </div>
       <div class="social-links">
