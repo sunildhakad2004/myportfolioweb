@@ -261,6 +261,44 @@ a {
 }
 
 .about-card h3,
+
+.skill-groups {
+  display: grid;
+  gap: 14px;
+}
+
+.skill-groups p {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.skill-groups strong,
+.coursework strong {
+  color: var(--ink);
+}
+
+.about-details {
+  margin-top: 18px;
+}
+
+.coursework {
+  margin-top: 16px !important;
+  font-size: 14px !important;
+}
+
+.resume-list {
+  display: grid;
+  gap: 13px;
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
 .skills h3,
 .contact-info h3 {
   margin: 0 0 12px;
@@ -323,6 +361,11 @@ a {
   font-size: 14px;
 }
 
+.project-date {
+  float: right;
+  color: var(--muted);
+}
+
 .project-content ul {
   margin: 0;
   padding-left: 19px;
@@ -354,6 +397,16 @@ a {
 .contact-item p {
   margin: 4px 0 0;
   font-size: 14px;
+}
+
+.contact-item a {
+  color: inherit;
+  text-decoration-color: var(--line);
+  text-underline-offset: 3px;
+}
+
+.contact-item a:hover {
+  color: var(--accent);
 }
 
 .contact-form {
