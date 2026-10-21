@@ -6,7 +6,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="profile.css" />
 
   <title>Sunil Dhakad | Portfolio</title>
 </head>
@@ -14,50 +14,42 @@
 <body>
   <!-- ================= HEADER ================= -->
 
-  <header class="header1">
-    <div class="logo">Sunil Dhakad<span></span></div>
-
-    <nav aria-label="Main navigation">
+  <header class="site-header">
+    <a class="wordmark" href="index.html" aria-label="Sunil Dhakad home">
+      <span class="brand-mark" aria-hidden="true">SD</span>
+      <span>Sunil<br />Dhakad</span>
+    </a>
+    <div class="header-actions">
+      <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Open navigation">☰</button>
+      <button id="themeToggle" type="button" aria-label="Toggle color theme">☼</button>
+    </div>
+    <nav class="site-menu" id="site-menu" aria-label="Main navigation">
       <a href="index.html" aria-current="page">Home</a>
       <a href="about.html">About</a>
       <a href="projects.html">Projects</a>
       <a href="contact.html">Contact</a>
     </nav>
-    <button id="themeToggle" type="button" aria-label="Toggle dark mode">🌙</button>
   </header>
 
   <!-- ================= HERO ================= -->
 
-  <section id="Home" class="hero">
-    <div class="hero-content">
-      <p class="small-title">WELCOME TO MY PORTFOLIO</p>
-
-      <h1>
-        I'm a
-        <span>Software Developer</span>
-        & Full Stack Engineer
-      </h1>
-
-      <h2>Sunil Dhakad</h2>
-
-      <p class="hero-description">
-        I build modern, scalable and user-friendly web applications using
-        modern technologies and clean development practices.
-      </p>
-
-      <div class="hero-buttons">
-        <a href="projects.html" class="primary-btn"> View Projects </a>
-
-        <a href="contact.html" class="secondary-btn"> Contact Me </a>
+  <main class="home-main">
+    <section class="profile-block" aria-labelledby="profile-name">
+      <img class="profile-photo" src="image.png" alt="Sunil Dhakad" />
+      <h1 id="profile-name">Sunil Dhakad</h1>
+      <h2 class="profile-role">Software Developer</h2>
+      <p class="profile-subtitle">BCA Data Science Graduate · Full-Stack Engineer</p>
+      <div class="social-links" aria-label="Social links">
+        <a href="https://linkedin.com/in/sunil-dhakad-110913316" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a>
+        <a href="https://github.com/sunildhakad2004" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GH</a>
+        <a href="mailto:sunildhakadsd27@gmail.com" aria-label="Email">@</a>
       </div>
-    </div>
-
-    <div class="hero-image">
-      <div class="image-circle">
-        <img src="image.png" alt="Sunil Dhakad" />
-      </div>
-    </div>
-  </section>
+    </section>
+    <section class="intro-block">
+      <h2>I build thoughtful web apps.<br />Full-stack products. Data-driven tools.<br />From a clean idea to a working system.</h2>
+      <a class="primary-link" href="projects.html">Start Here <span aria-hidden="true">→</span></a>
+    </section>
+  </main>
 
   <!-- ================= ABOUT ================= -->
 
