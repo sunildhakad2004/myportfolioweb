@@ -16,6 +16,6 @@ Set up a Meta WhatsApp Business Cloud API app and configure an approved message 
 
 ## Environment Variables
 
-Copy the variable names from `.env.example` into Vercel Project Settings > Environment Variables. Set `PUBLIC_SITE_ORIGIN` to the exact deployed site origin, for example `https://portfolio.example.com` (no trailing slash). Never commit real API keys or tokens.
+Copy the variable names from `.env.example` into Vercel Project Settings > Environment Variables. Set `PUBLIC_SITE_ORIGIN` to the exact deployed site origin, for example `https://myportfolioweb-mu-nine.vercel.app/` (no trailing slash). Never commit real API keys or tokens.
 
 After adding or changing environment variables, redeploy the Vercel project. Test by submitting the form and confirm the Gmail and WhatsApp notifications arrive.
