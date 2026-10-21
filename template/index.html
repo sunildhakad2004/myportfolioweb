@@ -17,19 +17,13 @@
   <header class="header1">
     <div class="logo">Sunil Dhakad<span></span></div>
 
-    <nav>
-
-      <nav>
-        <a href="#Home">Home</a>
-        <a href="#Summary">About</a>
-        <a href="#ExtraActivities">Extra Activities</a>
-        <a href="#Projects">Projects</a>
-        <a href="#Contact">Contact</a>
-      </nav>
-      >
-
-      <button id="themeToggle" type="button">🌙</button>
+    <nav aria-label="Main navigation">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
     </nav>
+    <button id="themeToggle" type="button" aria-label="Toggle dark mode">🌙</button>
   </header>
 
   <!-- ================= HERO ================= -->
@@ -52,9 +46,9 @@
       </p>
 
       <div class="hero-buttons">
-        <a href="#Projects" class="primary-btn"> View Projects </a>
+        <a href="projects.html" class="primary-btn"> View Projects </a>
 
-        <a href="#Contact" class="secondary-btn"> Contact Me </a>
+        <a href="contact.html" class="secondary-btn"> Contact Me </a>
       </div>
     </div>
 
@@ -67,7 +61,7 @@
 
   <!-- ================= ABOUT ================= -->
 
-  <section id="Summary" class="section">
+  <section id="Summary" class="section" hidden>
     <div class="section-title">
       <p>ABOUT ME</p>
 
@@ -121,7 +115,7 @@
 
   <!-- ================= PROJECTS ================= -->
 
-  <section id="Projects" class="section projects">
+  <section id="Projects" class="section projects" hidden>
     <div class="section-title">
       <p>MY WORK</p>
 
@@ -237,7 +231,7 @@
 
   <!-- ================= CONTACT ================= -->
 
-  <section id="Contact" class="section contact">
+  <section id="Contact" class="section contact" hidden>
     <div class="section-title">
       <p>GET IN TOUCH</p>
 
@@ -334,23 +328,7 @@
     <p>© 2026 Sunil Dhakad. All Rights Reserved.</p>
   </footer>
 
-  <!-- ================= DARK MODE SCRIPT ================= -->
-
-  <script>
-    const themeToggle = document.getElementById("themeToggle");
-
-    const body = document.body;
-
-    themeToggle.addEventListener("click", function () {
-      body.classList.toggle("dark-mode");
-
-      if (body.classList.contains("dark-mode")) {
-        themeToggle.textContent = "☀️";
-      } else {
-        themeToggle.textContent = "🌙";
-      }
-    });
-  </script>
+  <script src="theme.js"></script>
 </body>
 
 </html>
