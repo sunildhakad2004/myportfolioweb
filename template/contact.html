@@ -28,12 +28,15 @@
           <div class="contact-item"><span>📱</span><div><small>Mobile</small><p><a href="tel:+918718850393">+91 8718850393</a></p></div></div>
           <div class="contact-item"><span>📍</span><div><small>Location</small><p>Bhopal, Madhya Pradesh, India</p></div></div>
         </div>
-        <form class="contact-form">
+        <form class="contact-form" id="contactForm">
           <input type="text" name="name" placeholder="Your Name" required />
           <input type="email" name="email" placeholder="Your Email" required />
           <input type="text" name="subject" placeholder="Subject" required />
           <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
-          <button type="submit">Send Message →</button>
+          <div class="send-options">
+            <button type="submit" name="delivery" value="email">Send via Gmail</button>
+            <button type="submit" name="delivery" value="whatsapp">Send via WhatsApp</button>
+          </div>
         </form>
       </div>
       <div class="social-links">

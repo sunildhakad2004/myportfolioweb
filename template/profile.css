@@ -470,7 +470,13 @@ a {
   resize: vertical;
 }
 
-.contact-form button {
+.send-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.send-options button {
   min-height: 48px;
   border: 0;
   background: var(--ink);
@@ -480,7 +486,7 @@ a {
   font-weight: 600;
 }
 
-.contact-form button:hover {
+.send-options button:hover {
   background: var(--accent);
 }
 
@@ -567,6 +573,10 @@ body.dark-mode {
   .contact-container {
     grid-template-columns: 1fr;
     gap: 10px;
+  }
+
+  .send-options {
+    grid-template-columns: 1fr;
   }
 
   .project-card {
